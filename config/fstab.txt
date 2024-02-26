@@ -1,0 +1,52 @@
+
+#
+# /etc/fstab
+# Created by anaconda on Mon Jan 29 03:45:51 2024
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk/'.
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info.
+#
+# After editing this file, run 'systemctl daemon-reload' to update systemd
+# units generated from this file.
+#
+/dev/mapper/cs-root     /                       xfs     defaults        0 0
+UUID=426e25dc-44a0-4f05-9883-dc63673c0272 /boot                   xfs     defaults        0 0
+/dev/mapper/cs-home     /home                   xfs     defaults        0 0
+/dev/mapper/cs-swap     none                    swap    defaults        0 0
+
+#
+# (1) Specific configuration
+#
+#/dev/sdb1	/testmount	xfs	defaults	0	2
+
+# (2) Oracle configuration
+#/dev/sdd1	/oracle 	xfs	defaults	0	2
+
+# (3)
+#/dev/vg1/lv1		/lv1	ext4	defaults		0	2
+#/dev/mapper/vg1-lv2	/lv2	ext4	defaults		0	2
+
+#/dev/VG1/LV1     /lvm1	ext4	defaults	0 2
+#/dev/VG2/LV2	 /lvm2  ext4    defaults        0 2
+#/dev/VG2/LV3     /lvm3  ext4    defaults        0 2
+#/dev/VG2/LV4     /lvm4  ext4    defaults        0 2
+
+# (4) LVM Configuration
+#/dev/md0	/raid0	ext4	defaults	0	2
+#/dev/md0	/raid1	ext4	defaults	0	2
+#/dev/md0	/raid5	ext4	defaults	0	2
+
+# (5) SWAP Configuration
+#
+#/swap/swapfile	none	swap	defaults	0	0
+#/swap/swapfile	none	swap	defaults	0	0
+#/dev/cs/swap2	none	swap	defaults	0	0
+#
+# (6) SMB Mount configuration
+#
+#//192.168.10.202/sambashare /mnt/server	cifs credentials=/root/credentials/smb.txt 0 0
+#
+#
+# (7) Stratis Volume Configuration
+#
+UUID="1c4ac62f-93f3-473f-811c-a9b33974e292" /vol xfs x-systemd.requires=stratisd.service 0 0
