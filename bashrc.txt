@@ -13,7 +13,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 #
-# Sfecific configuration
+# Specific configuration
 #
 export PS1='\[\e[31;1m\][\u@\h\[\e[33;1m\] \w]\$ \[\e[m\]'
 alias vi='/usr/bin/vim'
